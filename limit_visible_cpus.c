@@ -15,7 +15,7 @@ long int sysconf (int parameter) {
 			return real_result;
 		} else {
 			int max_threads = atoi(omp_num_threads);
-			if (max_threads>0 || max_threads<300) {
+			if (max_threads>0 && max_threads<300) {
 				return (real_result > max_threads ? max_threads : real_result);
 			}
 		}
